@@ -29,7 +29,6 @@ struct CardHeader: View {
                     .imageScale(.large)
                     .rotationEffect(.degrees(showDetails ? 90 : 0))
                     .scaleEffect(showDetails ? 1.5 : 1)
-                    .padding()
             }
         }
         .padding(.leading, 8)

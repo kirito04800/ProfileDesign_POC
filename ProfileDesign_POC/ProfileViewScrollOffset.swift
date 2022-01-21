@@ -36,9 +36,11 @@ struct ProfileViewScrollOffset: View {
                         .padding(.trailing, 16)
                         .padding(.leading,16)
 
-                    CardView(title: "Legal Infos" , icon: Image(systemName: "info.circle.fill").renderingMode(.original), details: AnyView(PersonalInfo()))
-                        .padding(.trailing, 16)
-                        .padding(.leading,16)
+                    ForEach(1..<10) { i in
+                        CardView(title: "Legal Infos" , icon: Image(systemName: "info.circle.fill").renderingMode(.original), details: AnyView(PersonalInfo()))
+                            .padding(.trailing, 16)
+                            .padding(.leading,16)
+                    }
 
                     Spacer()
 
@@ -53,7 +55,7 @@ struct ProfileViewScrollOffset: View {
                     )
                     .padding()
                 }
-                .ignoresSafeArea()
+//                .ignoresSafeArea()
                 .frame(width: nil, height: nil)
                 .onChange(of: offset, perform: { _ in
                     computeImageSize()
@@ -67,15 +69,16 @@ struct ProfileViewScrollOffset: View {
                                     .shadow(color: .gray, radius: 4)
                                     .mask(Rectangle().padding(.bottom, -4))
                             )
+                            .ignoresSafeArea()
 
                         CircleImage(image: Image(systemName: "person.crop.circle.fill"))
                     }
                     .frame(width: nil, height: size)
                     Spacer()
                 }
-                .ignoresSafeArea()
+//                .ignoresSafeArea()
             }
-            .padding(.top, 10)
+//            .padding(.top, 10)
         }
     }
 
@@ -92,5 +95,6 @@ struct ProfileViewScrollOffset: View {
 struct ProfileViewScrollOffset_Previews: PreviewProvider {
     static var previews: some View {
         ProfileViewScrollOffset()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro Max"))
     }
 }
