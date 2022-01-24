@@ -18,10 +18,8 @@ struct CardHeader: View {
             Text(title)
             Spacer()
             Button {
-                print("rrrrr")
                 withAnimation(.easeInOut(duration: 0.2)) {
                     showDetails.toggle()
-                    print(showDetails)
                 }
             } label: {
                 Label("Graph", systemImage: "chevron.right.circle")
@@ -35,7 +33,6 @@ struct CardHeader: View {
         .padding(.trailing, 8)
         .padding(.top, 8)
         .onAppear {
-            print("generated")
         }
     }
 }
